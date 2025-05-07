@@ -15,6 +15,8 @@ table 50101 ItemMasterfile
                 rec.ItemDesc := rec.ItemNo + 'ITEM';
                 rec.UnitPrice := 100;
             end;
+
+            //autosplitkey - for integers
         }
 
         field(2; ItemDesc; code[20])
@@ -63,6 +65,9 @@ table 50101 ItemMasterfile
         key(PK; ItemNo)
         {
             Clustered = true;
+        }
+        key(SK1; UnitPrice)
+        {
         }
     }
 

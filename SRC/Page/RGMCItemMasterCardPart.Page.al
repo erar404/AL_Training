@@ -3,7 +3,7 @@ page 50104 RGMCIMasterCardPart_ER
     PageType = CardPart;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = RGMC_MasterfileInfo
+    SourceTable = RGMC_MasterfileInfo;
 
     layout
     {

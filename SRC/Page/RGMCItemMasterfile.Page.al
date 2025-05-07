@@ -12,8 +12,17 @@ page 50101 RGMC_ItemMasterfile
 
     layout
     {
+        // area(inputArea){
+        //     field(inputfield)
+        // }
         area(Content)
         {
+            // group(inputArea) 
+            // {
+            //     field(code) {
+
+            //     }
+            // }
             repeater(General)
             {
                 field(ItemNo; rec.ItemNo)
@@ -52,12 +61,53 @@ page 50101 RGMC_ItemMasterfile
     {
         area(Processing)
         {
-            action(ActionName)
+            action(KUHA)
             {
 
                 trigger OnAction()
                 begin
+                    // TestCodeUnit.Run();
+                    // dlgdialog.oPeN('Input Item Number: #1######################');
+                    // dlgdialog.Update(1, myitemcode);
+                    TestCodeUnit.TestProcedureGet(Rec.ItemNo);
+                end;
+            }
+            action(PAYNDPERS)
+            {
+                trigger OnAction()
+                begin
+                    TestCodeUnit.TestProcFF();
+                end;
+            }
+            action(IKOT)
+            {
+                trigger OnAction()
+                begin
+                    TestCodeUnit.TestProcNext();
+                end;
+            }
+            action(PASOK)
+            {
 
+                trigger OnAction()
+                begin
+                    TestCodeUnit.TestDataMani(1);
+                end;
+            }
+            action(UPDEYT)
+            {
+
+                trigger OnAction()
+                begin
+                    TestCodeUnit.TestDataMani(2);
+                end;
+            }
+            action(TANGGAL)
+            {
+
+                trigger OnAction()
+                begin
+                    TestCodeUnit.TestDataMani(3);
                 end;
             }
         }
@@ -65,4 +115,7 @@ page 50101 RGMC_ItemMasterfile
 
     var
         myInt: Integer;
+        myItemCOde: code[20];
+        dlgdialog: Dialog;
+        TestCodeUnit: Codeunit RGMCTestCodeUnit_ER;
 }

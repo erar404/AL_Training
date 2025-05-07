@@ -35,6 +35,7 @@ page 50109 RGMCCardPage_ER
                 trigger OnAction()
                 begin
                     Message('Menu 1 Ni Erwin');
+                    //autosplitkey - for integers
                 end;
             }
         }
